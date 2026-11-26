@@ -4,9 +4,15 @@ Vedant Vikas Shelkar, IIT Madras.
 
 Challenge A (Attendee Growth) 
 
-The deck is [`deck/be23b014_vedantshelkar_attendee_challenge.pdf`](deck/be23b014_vedantshelkar_attendee_challenge.pdf) and the working product is live at **https://risa-apm-growth.vercel.app**.
+<p>
+  <a href="https://risa-apm-growth.vercel.app"><img alt="Open the live app" src="https://img.shields.io/badge/Open%20the%20live%20app-risa--apm--growth.vercel.app-000000?style=for-the-badge&logo=vercel&logoColor=white"></a>
+  <a href="deck/be23b014_vedantshelkar_attendee_challenge.pdf"><img alt="Read the deck (PDF)" src="https://img.shields.io/badge/Read%20the%20deck-PDF-0F5BFF?style=for-the-badge&logo=adobeacrobatreader&logoColor=white"></a>
+</p>
 
-One practical note before you test it. The app is open to anyone with the link, and the AI analyst runs on my personal OpenAI key, which has a $50 usage limit for security purposes, so an open link cannot run up unlimited costs. If that limit is ever reached, the analyst will return an error, but the dashboards, campaigns, tasks and data editor carry on working. If the data gets into a strange state while you are testing, Settings → Reset to original data puts the provided dataset back.
+🌐 **Live app:** [risa-apm-growth.vercel.app](https://risa-apm-growth.vercel.app)<br>
+📄 **Deck:** [be23b014_vedantshelkar_attendee_challenge.pdf](deck/be23b014_vedantshelkar_attendee_challenge.pdf)
+
+🔒 **Before you test it.** The app is open to anyone with the link, and the AI analyst runs on my personal OpenAI key, which has a $50 usage limit for security purposes, so an open link cannot run up unlimited costs. If that limit is ever reached, the analyst will return an error, but the dashboards, campaigns, tasks and data editor carry on working. If the data gets into a strange state while you are testing, Settings → Reset to original data puts the provided dataset back.
 
 Throughout this document, (E) marks something I took from the provided 2025 data and (A) marks an assumption of mine.
 
