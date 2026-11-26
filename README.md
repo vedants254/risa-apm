@@ -4,10 +4,7 @@ Vedant Vikas Shelkar, IIT Madras.
 
 Challenge A (Attendee Growth) 
 
-<p>
-  <a href="https://risa-apm-growth.vercel.app"><img alt="Open the live app" src="https://img.shields.io/badge/Open%20the%20live%20app-risa--apm--growth.vercel.app-000000?style=for-the-badge&logo=vercel&logoColor=white"></a>
-  <a href="deck/be23b014_vedantshelkar_attendee_challenge.pdf"><img alt="Read the deck (PDF)" src="https://img.shields.io/badge/Read%20the%20deck-PDF-0F5BFF?style=for-the-badge&logo=adobeacrobatreader&logoColor=white"></a>
-</p>
+[![Open the live app](https://img.shields.io/badge/Open%20the%20live%20app-risa--apm--growth.vercel.app-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://risa-apm-growth.vercel.app) [![Read the deck (PDF)](https://img.shields.io/badge/Read%20the%20deck-PDF-0F5BFF?style=for-the-badge&logo=googleslides&logoColor=white)](deck/be23b014_vedantshelkar_attendee_challenge.pdf)
 
 🌐 **Live app:** [risa-apm-growth.vercel.app](https://risa-apm-growth.vercel.app)<br>
 📄 **Deck:** [be23b014_vedantshelkar_attendee_challenge.pdf](deck/be23b014_vedantshelkar_attendee_challenge.pdf)
