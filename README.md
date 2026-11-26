@@ -3,7 +3,7 @@
 Vedant Vikas Shelkar, IIT Madras. Challenge A, Attendee Growth, Delhi NCR.
 
 - **Live app:** https://risa-apm-growth.vercel.app
-- **Deck:** [`deck/be23b014_vedantshelkar_attendee_challenge.pdf`](deck/be23b014_vedantshelkar_attendee_challenge.pdf) (editable: [`deck/RISA_Growth_Strategy.pptx`](deck/RISA_Growth_Strategy.pptx))
+- **Deck:** [`deck/be23b014_vedantshelkar_attendee_challenge.pdf`](deck/be23b014_vedantshelkar_attendee_challenge.pdf)
 - **Before you test:** the app is open to anyone with the link, and the AI analyst runs on my own OpenAI key with a **$50 monthly usage limit**. If the limit is reached, the analyst replies with an error while the rest of the app keeps working. Settings → Reset to original data restores the provided dataset at any time.
 
 In 2025, most of the money went to channels whose registrants did not turn up. The plan moves spend to partnerships, ambassadors and referrals, and reconfirms every registrant before the event. That gets to about **8,000 verified attendees on ₹10.2L**, against 2,050 in 2025, with **16,000** as a stretch if the early signals earn a top-up. **E** marks evidence from the provided dataset and **A** marks an assumption.
