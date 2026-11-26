@@ -1,0 +1,377 @@
+{
+  "seed": 42,
+  "cv": "5-fold stratified x 5 repeats",
+  "feature_cutoff": "events strictly before 2025-04-12 00:00 IST (end of T-1)",
+  "first_touch_vs_registration_mismatch_count": 0,
+  "excluded": [
+    "check-ins",
+    "interactions on/after event day",
+    "detail free text",
+    "person name"
+  ],
+  "A_all_registrants": {
+    "n": 2800,
+    "base_rate": 0.6875,
+    "logistic_regression": {
+      "cv_auc_mean": 0.7989,
+      "cv_auc_sd": 0.0188,
+      "oof_auc": 0.797,
+      "oof_brier": 0.144,
+      "brier_of_base_rate": 0.2148,
+      "calibration_quantile_bins": [
+        {
+          "mean_predicted": 0.0019,
+          "observed": 0.0
+        },
+        {
+          "mean_predicted": 0.5084,
+          "observed": 0.5321
+        },
+        {
+          "mean_predicted": 0.5848,
+          "observed": 0.6157
+        },
+        {
+          "mean_predicted": 0.6251,
+          "observed": 0.5735
+        },
+        {
+          "mean_predicted": 0.7655,
+          "observed": 0.8214
+        },
+        {
+          "mean_predicted": 0.8254,
+          "observed": 0.8286
+        },
+        {
+          "mean_predicted": 0.8539,
+          "observed": 0.8143
+        },
+        {
+          "mean_predicted": 0.8782,
+          "observed": 0.9071
+        },
+        {
+          "mean_predicted": 0.9021,
+          "observed": 0.8857
+        },
+        {
+          "mean_predicted": 0.9238,
+          "observed": 0.8964
+        }
+      ],
+      "expected_calibration_error": 0.0279,
+      "permutation_importance_auc_drop": {
+        "campaign_C02": 0.0455,
+        "status_t1_cancelled": 0.0262,
+        "status_t1_waitlisted": 0.0258,
+        "ever_cancelled": 0.0242,
+        "campaign_C04": 0.0198,
+        "campaign_C03": 0.0171,
+        "status_t1_interested": 0.0124,
+        "campaign_C07": 0.0044,
+        "reconfirmed": 0.0032,
+        "days_seen_to_reg": 0.0028
+      }
+    },
+    "gradient_boosting": {
+      "cv_auc_mean": 0.7816,
+      "cv_auc_sd": 0.0193,
+      "oof_auc": 0.7797,
+      "oof_brier": 0.1512,
+      "brier_of_base_rate": 0.2148,
+      "calibration_quantile_bins": [
+        {
+          "mean_predicted": 0.0173,
+          "observed": 0.0286
+        },
+        {
+          "mean_predicted": 0.5196,
+          "observed": 0.5714
+        },
+        {
+          "mean_predicted": 0.5835,
+          "observed": 0.5571
+        },
+        {
+          "mean_predicted": 0.6476,
+          "observed": 0.6179
+        },
+        {
+          "mean_predicted": 0.7698,
+          "observed": 0.7936
+        },
+        {
+          "mean_predicted": 0.8139,
+          "observed": 0.871
+        },
+        {
+          "mean_predicted": 0.8396,
+          "observed": 0.8429
+        },
+        {
+          "mean_predicted": 0.8645,
+          "observed": 0.8357
+        },
+        {
+          "mean_predicted": 0.892,
+          "observed": 0.8679
+        },
+        {
+          "mean_predicted": 0.9238,
+          "observed": 0.8893
+        }
+      ],
+      "expected_calibration_error": 0.0291,
+      "permutation_importance_auc_drop": {
+        "status_t1_cancelled": 0.0935,
+        "campaign_C02": 0.0589,
+        "status_t1_waitlisted": 0.0334,
+        "campaign_C03": 0.0238,
+        "campaign_C04": 0.0123,
+        "ever_waitlisted": 0.0088,
+        "campaign_C07": 0.0021,
+        "days_seen_to_reg": 0.0009,
+        "registered_weekend": 0.0008,
+        "ever_cancelled": 0.0004
+      }
+    },
+    "status_t1_rule": {
+      "cancelled": {
+        "size": 183,
+        "mean": 0.0
+      },
+      "confirmed": {
+        "size": 2500,
+        "mean": 0.77
+      },
+      "interested": {
+        "size": 29,
+        "mean": 0.0
+      },
+      "waitlisted": {
+        "size": 88,
+        "mean": 0.0
+      }
+    }
+  },
+  "B_confirmed_t1": {
+    "n": 2500,
+    "base_rate": 0.77,
+    "logistic_regression": {
+      "cv_auc_mean": 0.6955,
+      "cv_auc_sd": 0.0212,
+      "oof_auc": 0.6915,
+      "oof_brier": 0.1607,
+      "brier_of_base_rate": 0.1771,
+      "calibration_quantile_bins": [
+        {
+          "mean_predicted": 0.5489,
+          "observed": 0.596
+        },
+        {
+          "mean_predicted": 0.5839,
+          "observed": 0.584
+        },
+        {
+          "mean_predicted": 0.615,
+          "observed": 0.588
+        },
+        {
+          "mean_predicted": 0.718,
+          "observed": 0.724
+        },
+        {
+          "mean_predicted": 0.8106,
+          "observed": 0.824
+        },
+        {
+          "mean_predicted": 0.8419,
+          "observed": 0.86
+        },
+        {
+          "mean_predicted": 0.8626,
+          "observed": 0.86
+        },
+        {
+          "mean_predicted": 0.8849,
+          "observed": 0.868
+        },
+        {
+          "mean_predicted": 0.9073,
+          "observed": 0.892
+        },
+        {
+          "mean_predicted": 0.9268,
+          "observed": 0.904
+        }
+      ],
+      "expected_calibration_error": 0.0169,
+      "permutation_importance_auc_drop": {
+        "campaign_C02": 0.0707,
+        "campaign_C04": 0.0289,
+        "campaign_C03": 0.023,
+        "campaign_C07": 0.0068,
+        "registered_weekend": 0.0048,
+        "days_seen_to_reg": 0.0024,
+        "campaign_C05": 0.0022,
+        "brochure_download": 0.0018,
+        "campaign_C06": 0.0011,
+        "nurture_email_sent": 0.0005
+      }
+    },
+    "gradient_boosting": {
+      "cv_auc_mean": 0.6782,
+      "cv_auc_sd": 0.0245,
+      "oof_auc": 0.6741,
+      "oof_brier": 0.1662,
+      "brier_of_base_rate": 0.1771,
+      "calibration_quantile_bins": [
+        {
+          "mean_predicted": 0.4859,
+          "observed": 0.624
+        },
+        {
+          "mean_predicted": 0.5751,
+          "observed": 0.62
+        },
+        {
+          "mean_predicted": 0.6501,
+          "observed": 0.532
+        },
+        {
+          "mean_predicted": 0.7413,
+          "observed": 0.776
+        },
+        {
+          "mean_predicted": 0.8007,
+          "observed": 0.824
+        },
+        {
+          "mean_predicted": 0.8322,
+          "observed": 0.86
+        },
+        {
+          "mean_predicted": 0.8609,
+          "observed": 0.836
+        },
+        {
+          "mean_predicted": 0.8872,
+          "observed": 0.864
+        },
+        {
+          "mean_predicted": 0.9118,
+          "observed": 0.872
+        },
+        {
+          "mean_predicted": 0.9459,
+          "observed": 0.892
+        }
+      ],
+      "expected_calibration_error": 0.0529,
+      "permutation_importance_auc_drop": {
+        "campaign_C02": 0.0903,
+        "campaign_C03": 0.0408,
+        "campaign_C04": 0.0165,
+        "campaign_C07": 0.007,
+        "registered_weekend": 0.0043,
+        "campaign_C05": 0.0014,
+        "event_question_submitted": 0.0,
+        "reconfirmed": 0.0,
+        "ever_cancelled": 0.0,
+        "ever_waitlisted": 0.0
+      }
+    },
+    "lr_odds_ratio_per_sd": {
+      "campaign_C02": 0.634,
+      "campaign_C04": 1.424,
+      "campaign_C03": 0.728,
+      "campaign_C07": 1.192,
+      "campaign_C05": 1.127,
+      "registered_weekend": 1.116,
+      "campaign_C06": 1.116,
+      "ever_waitlisted": 1.091,
+      "days_seen_to_reg": 1.08,
+      "brochure_download": 1.055,
+      "lead_days": 1.041,
+      "nurture_email_opened": 1.013,
+      "opted_out": 1.011,
+      "reconfirmed": 0.994,
+      "ever_cancelled": 0.994,
+      "event_question_submitted": 0.994,
+      "nurture_email_clicked": 0.996,
+      "nurture_email_sent": 0.997,
+      "n_status_changes": 1.001
+    },
+    "reminder_lift": {
+      "deciles": {
+        "1": {
+          "n": 250,
+          "mean_predicted": 0.5489,
+          "observed_show_up": 0.596
+        },
+        "2": {
+          "n": 250,
+          "mean_predicted": 0.5839,
+          "observed_show_up": 0.584
+        },
+        "3": {
+          "n": 250,
+          "mean_predicted": 0.615,
+          "observed_show_up": 0.588
+        },
+        "4": {
+          "n": 250,
+          "mean_predicted": 0.718,
+          "observed_show_up": 0.724
+        },
+        "5": {
+          "n": 250,
+          "mean_predicted": 0.8106,
+          "observed_show_up": 0.824
+        },
+        "6": {
+          "n": 250,
+          "mean_predicted": 0.8419,
+          "observed_show_up": 0.86
+        },
+        "7": {
+          "n": 250,
+          "mean_predicted": 0.8626,
+          "observed_show_up": 0.86
+        },
+        "8": {
+          "n": 250,
+          "mean_predicted": 0.8849,
+          "observed_show_up": 0.868
+        },
+        "9": {
+          "n": 250,
+          "mean_predicted": 0.9073,
+          "observed_show_up": 0.892
+        },
+        "10": {
+          "n": 250,
+          "mean_predicted": 0.9268,
+          "observed_show_up": 0.904
+        }
+      },
+      "lowest_decile_n": 250,
+      "lowest_decile_observed_no_shows": 101,
+      "scenarios": [
+        {
+          "assumption": "a reminder converts 10% of a person's no-show probability (1-p) into attendance",
+          "extra_attendees_lowest_decile": 11.3,
+          "extra_attendees_random_same_size": 5.8,
+          "targeting_multiplier": 1.96
+        },
+        {
+          "assumption": "a reminder converts 20% of a person's no-show probability (1-p) into attendance",
+          "extra_attendees_lowest_decile": 22.6,
+          "extra_attendees_random_same_size": 11.5,
+          "targeting_multiplier": 1.96
+        }
+      ]
+    }
+  }
+}

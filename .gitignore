@@ -1,0 +1,32 @@
+# secrets and local state
+.env
+.env.*
+!.env.local.example
+**/.env
+**/.env.*
+!**/.env.local.example
+.vercel/
+.claude/
+app/data/
+*.db
+*.db-*
+# dependencies and builds
+.venv/
+node_modules/
+.next/
+*.tsbuildinfo
+__pycache__/
+*.pyc
+deck/_pptx_tmp/
+# not published: the brief, internal notes and written reports
+IIT Madras - RISA Labs Growth APM Assignment.pdf
+docs/
+analysis/report.md
+analysis/data_quality.md
+analysis/metric_definitions.md
+analysis/charts/
+analysis/ml/README.md
+deck/archive/
+app/NOTES.md
+app/AGENTS.md
+~$*

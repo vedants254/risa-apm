@@ -1,0 +1,246 @@
+{
+  "dedupe": {
+    "event": {
+      "rows_raw": 1,
+      "duplicate_rows_removed": 0,
+      "rows_clean": 1
+    },
+    "targets": {
+      "rows_raw": 2,
+      "duplicate_rows_removed": 0,
+      "rows_clean": 2
+    },
+    "campaigns": {
+      "rows_raw": 7,
+      "duplicate_rows_removed": 0,
+      "rows_clean": 7
+    },
+    "campaign_daily": {
+      "rows_raw": 483,
+      "duplicate_rows_removed": 2,
+      "rows_clean": 481
+    },
+    "people": {
+      "rows_raw": 3685,
+      "duplicate_rows_removed": 0,
+      "rows_clean": 3685
+    },
+    "lead_interactions": {
+      "rows_raw": 11650,
+      "duplicate_rows_removed": 0,
+      "rows_clean": 11650
+    },
+    "registrations": {
+      "rows_raw": 2840,
+      "duplicate_rows_removed": 0,
+      "rows_clean": 2840
+    },
+    "registration_history": {
+      "rows_raw": 5911,
+      "duplicate_rows_removed": 4,
+      "rows_clean": 5907
+    },
+    "checkins": {
+      "rows_raw": 3390,
+      "duplicate_rows_removed": 20,
+      "rows_clean": 3370
+    }
+  },
+  "raw_exact_duplicate_rows": {
+    "event": 0,
+    "targets": 0,
+    "campaigns": 0,
+    "campaign_daily": 2,
+    "people": 0,
+    "lead_interactions": 0,
+    "registrations": 0,
+    "registration_history": 4,
+    "checkins": 20
+  },
+  "people_by_type": {
+    "external": 3625,
+    "internal": 40,
+    "staff": 10,
+    "test": 10
+  },
+  "people_by_type_and_source": {
+    "external|campaign": 3500,
+    "external|walk_in": 125,
+    "internal|internal_registration": 40,
+    "staff|event_access": 10,
+    "test|event_access": 10
+  },
+  "non_external_people": 60,
+  "registrations_by_person_type": {
+    "external": 2800,
+    "internal": 40
+  },
+  "non_external_registrations_by_campaign": {
+    "C06": 40
+  },
+  "checkin_rows_by_result_verification": {
+    "admitted|verified": 3290,
+    "denied|verified": 50,
+    "pending|unverified": 30
+  },
+  "checkin_rows_not_verified_admission": 80,
+  "checkin_people_all_ids": 2150,
+  "verified_people_by_type": {
+    "external": 2050,
+    "internal": 20,
+    "staff": 10,
+    "test": 10
+  },
+  "denied_rows": 50,
+  "denied_people_later_verified": 20,
+  "pending_unverified_rows": 30,
+  "pending_people_later_verified": 0,
+  "external_people_with_only_unverified_denied_pending": 60,
+  "denied_timestamps": [
+    "2025-04-12 10:05:00"
+  ],
+  "pending_timestamps": [
+    "2025-04-13 16:20:00"
+  ],
+  "external_verified_events": 3250,
+  "external_verified_people": 2050,
+  "verified_events_per_person": {
+    "1": 1325,
+    "2": 250,
+    "3": 475
+  },
+  "verified_days_per_person": {
+    "1": 1325,
+    "2": 725
+  },
+  "verified_source_mix_per_person": {
+    "scanner": 1810,
+    "manual": 165,
+    "manual+scanner": 75
+  },
+  "walkin_checkin_rows_no_registration": 150,
+  "checkin_registration_person_mismatch": 0,
+  "checkin_registration_campaign_mismatch": 0,
+  "negative_spend_rows": [
+    {
+      "activity_id": "AD-C01-0410",
+      "activity_date": "2025-04-10",
+      "campaign_id": "C01",
+      "platform": "campaign link analytics",
+      "marketing_spend_inr": "-1000"
+    },
+    {
+      "activity_id": "AD-C02-0410",
+      "activity_date": "2025-04-10",
+      "campaign_id": "C02",
+      "platform": "paid platform",
+      "marketing_spend_inr": "-3000"
+    },
+    {
+      "activity_id": "MD-C03-0416",
+      "activity_date": "2025-04-16",
+      "campaign_id": "C03",
+      "platform": "marketing ledger adjustment",
+      "marketing_spend_inr": "-2000"
+    },
+    {
+      "activity_id": "MD-C05-0418",
+      "activity_date": "2025-04-18",
+      "campaign_id": "C05",
+      "platform": "marketing ledger adjustment",
+      "marketing_spend_inr": "-500"
+    }
+  ],
+  "negative_spend_total_inr": -6500,
+  "daily_rows_zero_spend": 421,
+  "daily_rows_positive_spend": 56,
+  "daily_rows": 481,
+  "spend_total_inr": 274000,
+  "spend_through_2025_04_11_inr": 276500,
+  "reported_reach_sum_not_unique": 666297,
+  "daily_platform_counts": {
+    "campaign link analytics": 409,
+    "paid platform": 70,
+    "marketing ledger adjustment": 2
+  },
+  "daily_coverage_vs_plan": {
+    "C01": {
+      "first_activity": "2025-01-25",
+      "last_activity": "2025-04-11",
+      "planned_start": "2025-01-25",
+      "planned_end": "2025-04-13"
+    },
+    "C02": {
+      "first_activity": "2025-02-01",
+      "last_activity": "2025-04-11",
+      "planned_start": "2025-02-01",
+      "planned_end": "2025-04-13"
+    },
+    "C03": {
+      "first_activity": "2025-02-10",
+      "last_activity": "2025-04-11",
+      "planned_start": "2025-02-10",
+      "planned_end": "2025-04-13"
+    },
+    "C04": {
+      "first_activity": "2025-01-28",
+      "last_activity": "2025-04-11",
+      "planned_start": "2025-01-28",
+      "planned_end": "2025-04-13"
+    },
+    "C05": {
+      "first_activity": "2025-02-12",
+      "last_activity": "2025-04-11",
+      "planned_start": "2025-02-12",
+      "planned_end": "2025-04-13"
+    },
+    "C06": {
+      "first_activity": "2025-01-20",
+      "last_activity": "2025-04-11",
+      "planned_start": "2025-01-20",
+      "planned_end": "2025-04-13"
+    },
+    "C07": {
+      "first_activity": "2025-02-15",
+      "last_activity": "2025-04-11",
+      "planned_start": "2025-02-15",
+      "planned_end": "2025-04-13"
+    }
+  },
+  "status_sequences": {
+    "interested>confirmed": 2503,
+    "interested>confirmed>cancelled": 183,
+    "interested>waitlisted": 88,
+    "interested>confirmed>cancelled>confirmed": 36,
+    "interested": 29,
+    "interested>waitlisted>confirmed": 1
+  },
+  "history_ties_same_timestamp": 0,
+  "first_history_not_at_registered_at": 0,
+  "history_after_event_start": 0,
+  "interactions_by_person_type": {
+    "external": 11650
+  },
+  "interactions_after_event_start": 1,
+  "interactions_after_registration_by_type": {
+    "opted_out": 69
+  },
+  "identified_registration_starts": 3075,
+  "identified_registration_starts_without_registration": 275,
+  "anonymous_registration_starts": 5548,
+  "detail_text_encodes_outcome_rows": 770,
+  "first_touch_ne_registration_campaign": 0,
+  "first_seen_after_registered": 0,
+  "people_never_registered_external": 825,
+  "person_name_unique_vs_ids": [
+    3682,
+    3685
+  ],
+  "registered_at_hours": {
+    "10": 2840
+  },
+  "first_seen_at_hours": {
+    "9": 3500,
+    "10": 185
+  }
+}

@@ -1,0 +1,10 @@
+# never upload secrets or the local database
+.env
+.env.*
+!.env.local.example
+/data/
+/.next/
+/node_modules/
+/uploads/
+*.db
+*.db-*

@@ -1,0 +1,215 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ==========================================================================
+ * 1. THEME VALUES: the only place colours, radii and motion values live.
+ *    Source of truth: docs/ui_reference.md section 3 (palette) and 5 (motion).
+ *    Fonts are chosen in app/layout.tsx and mapped in @theme inline below.
+ * ========================================================================== */
+:root {
+  color-scheme: light;
+
+  /* Radii: soft, not rectangular. Buttons, badges and icon buttons are pills (rounded-full). */
+  --radius: 0.625rem; /* 10px: inputs, selects, textareas, cards */
+
+  /* Neutrals stay neutral: near-white page, white surface, near-black ink, greys.
+     Only the brand violet and the orange accent carry hue. */
+  --background: #f6f6f7; /* page chrome */
+  --foreground: #0c0c0f; /* ink */
+  --card: #ffffff; /* the content sheet */
+  --card-foreground: #0c0c0f;
+  --popover: #ffffff;
+  --popover-foreground: #0c0c0f;
+  --muted: #f0f0f2; /* tint layer, neutral pills */
+  --muted-foreground: #63636b; /* 5.2:1 on muted, 5.8:1 on white */
+  --secondary: #f0f0f2;
+  --secondary-foreground: #0c0c0f;
+  --accent: #f1f1f3; /* hover / pressed surface, NOT a brand colour */
+  --accent-foreground: #0c0c0f;
+
+  /* Brand violet (sampled from the CampusFest logo): primary buttons, focus rings, links,
+     the active nav item and selected states. 10.2:1 on white. */
+  --primary: #4f1fa4;
+  --primary-foreground: #ffffff;
+  --primary-hover: #2f0d7a; /* logo dark violet */
+  --primary-light: #6027ba; /* logo light violet */
+  --primary-tint: #f1edf8; /* violet at ~8% on white: selected rows, active nav */
+  --selection: #e4dcf2; /* text selection: violet at ~15% so it stays visible */
+
+  /* Second accent: the logo orange. Target / pace lines in charts and the timeline's
+     event and today highlight. Never for text at full strength (2.3:1 on white). */
+  --highlight: #dd7a00; /* lines and marks: logo orange deepened to 3:1 on white */
+  --highlight-ink: #a85a00; /* orange text on white: 5.1:1 */
+  --highlight-tint: #fff2e0; /* orange fill behind content */
+  --brand-orange: #fc8e02; /* exact logo orange: decorative fills only */
+
+  --border: #e7e7ea; /* used sparingly: table row hairlines, inputs */
+  --input: #d4d4d9;
+  --ring: #4f1fa4;
+  --destructive: #b42318;
+
+  /* Semantic tones: only for decisions. Tints appear on scale / change / stop
+     (scale = success, change = warning, stop = danger). Elsewhere use text or a small dot. */
+  --success: #1f7a4d;
+  --success-tint: #e6f4ec; /* text on tint 4.7:1 */
+  --warning: #8a5a00;
+  --warning-tint: #fbf0da; /* text on tint 5.2:1 */
+  --danger: #b42318;
+  --danger-tint: #fce9e7; /* text on tint 5.6:1 */
+
+  /* Charts: violet for the main series, orange only for target / pace (dashed), greys for
+     everything else, light violet for projection bands. No teal, no blue. */
+  --chart-1: #4f1fa4; /* violet: the primary series (actuals) */
+  --chart-2: #dd7a00; /* orange: target / pace, dashed */
+  --chart-3: #a1a1aa; /* neutral grey: every other series */
+  --chart-4: #6b6b73; /* dark grey: a second comparison series */
+  --chart-5: #d4d4d8; /* light grey: baseline / "other", always labelled */
+  --chart-projection: #e2daf1; /* light violet: projected range bands */
+
+  --sidebar: #f6f6f7;
+  --sidebar-foreground: #3f3f46;
+  --sidebar-primary: #4f1fa4;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #ececef; /* hover */
+  --sidebar-accent-foreground: #0c0c0f;
+  --sidebar-border: transparent;
+  --sidebar-ring: #4f1fa4;
+
+  /* App-specific */
+  --event-shade: rgba(252, 142, 2, 0.14); /* the shaded event days: logo orange, light */
+  --time: #0c0c0f; /* the timeline's elapsed track: ink */
+  /* The sheet is set apart from the page by tone plus this soft shadow, not a border. */
+  --shadow-sheet: 0 0 0 1px rgba(12, 12, 15, 0.03), 0 1px 3px rgba(12, 12, 15, 0.05);
+
+  /* Motion (docs/ui_reference.md section 5). Animate transform and opacity only. */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+  --dur-1: 120ms; /* hover */
+  --dur-2: 180ms; /* dialogs, popovers */
+  --dur-3: 260ms; /* drawers, the analyst panel */
+
+  /* Layout */
+  --sidebar-w: 224px;
+  --sidebar-w-icon: 52px;
+  --topbar-h: 48px;
+  --sheet-inset: 8px;
+  --analyst-w: 380px;
+}
+
+/* ==========================================================================
+ * 2. Tailwind theme: exposes the variables as utilities
+ *    (bg-card, text-muted-foreground, bg-success-tint, text-chart-1, ...).
+ * ========================================================================== */
+@theme inline {
+  --font-sans: var(--font-ui-sans), "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  --font-heading: var(--font-ui-sans), "Segoe UI", system-ui, sans-serif;
+  --font-mono: var(--font-ui-mono), ui-monospace, "Cascadia Code", Consolas, monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-tint: var(--primary-tint);
+  --color-primary-light: var(--primary-light);
+  --color-highlight: var(--highlight);
+  --color-highlight-ink: var(--highlight-ink);
+  --color-highlight-tint: var(--highlight-tint);
+  --color-brand-orange: var(--brand-orange);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-success: var(--success);
+  --color-success-tint: var(--success-tint);
+  --color-warning: var(--warning);
+  --color-warning-tint: var(--warning-tint);
+  --color-danger: var(--danger);
+  --color-danger-tint: var(--danger-tint);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-chart-projection: var(--chart-projection);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-event-shade: var(--event-shade);
+  --color-time: var(--time);
+  --shadow-sheet: var(--shadow-sheet);
+
+  --ease-out: var(--ease-out);
+  --ease-drawer: var(--ease-drawer);
+
+  --radius-sm: 6px; /* small chips, tooltips, tiny swatches */
+  --radius-md: 8px; /* nav items, menu items */
+  --radius-lg: var(--radius); /* 10px: inputs, selects, textareas, cards */
+  --radius-xl: 14px; /* the content sheet, popovers, menus */
+  --radius-2xl: 16px; /* dialogs, the command palette */
+  --radius-3xl: 20px;
+  --radius-4xl: 24px;
+  /* Semantic aliases (rounded-control, rounded-overlay). Pills use rounded-full. */
+  --radius-control: var(--radius);
+  --radius-overlay: 16px;
+}
+
+/* Every number: tabular figures. Plus Jakarta Sans digits are proportional by default
+   (advance widths 371 to 732 units); its tnum feature makes them all 600. */
+@utility num {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background font-sans text-sm text-foreground antialiased;
+    line-height: 1.45;
+  }
+  /* Keyboard focus: always visible, in the accent. */
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+  ::selection {
+    background: var(--selection);
+    color: var(--foreground);
+  }
+}
+
+/* Reduced motion (docs/ui_reference.md section 5). */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+

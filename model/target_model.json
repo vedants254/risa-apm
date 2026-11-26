@@ -1,0 +1,183 @@
+{
+ "calibration": {
+  "partners": {
+   "cpr_inr": 69,
+   "show_up": 0.8556
+  },
+  "ambassadors": {
+   "cpr_inr": 81,
+   "show_up": 0.75
+  },
+  "referrals": {
+   "cpr_inr": 56,
+   "show_up": 0.7857
+  },
+  "paid": {
+   "cpr_inr": 137,
+   "show_up": 0.5
+  },
+  "creators": {
+   "cpr_inr": 174,
+   "show_up": 0.5
+  },
+  "organic": {
+   "cpr_inr": 56,
+   "show_up": 0.78
+  },
+  "community": {
+   "cpr_inr": 80,
+   "show_up": 0.825
+  }
+ },
+ "walkin_share_2025": 0.061,
+ "referral_regs_per_other_reg_2025": 0.1429,
+ "constraints": {
+  "students_1hr": 700000,
+  "daily_capacity": 15000,
+  "pass_cap": 0.9,
+  "both_days": 0.35,
+  "unique_cap": 20000,
+  "gate_per_day": 27000
+ },
+ "base": {
+  "regs": {
+   "partners": 3000,
+   "ambassadors": 4000,
+   "paid": 914,
+   "organic": 1500,
+   "referrals": 1345
+  },
+  "attendees_by_channel": {
+   "partners": 2291,
+   "ambassadors": 2678,
+   "paid": 408,
+   "organic": 1044,
+   "referrals": 943
+  },
+  "registrations": 10759,
+  "registered_attendees": 7363,
+  "walkins": 478,
+  "unique_attendees_uncapped": 7842,
+  "unique_attendees": 7842,
+  "capacity_cap": 20000,
+  "spend_inr": 1017289,
+  "budget_inr": 1100000,
+  "within_budget": true,
+  "cac_per_attendee": 130,
+  "show_up": 0.6844
+ },
+ "stretch": {
+  "regs": {
+   "partners": 5760,
+   "ambassadors": 7000,
+   "paid": 1219,
+   "organic": 2000,
+   "referrals": 2967
+  },
+  "attendees_by_channel": {
+   "partners": 4987,
+   "ambassadors": 5313,
+   "paid": 617,
+   "organic": 1579,
+   "referrals": 2360
+  },
+  "registrations": 18946,
+  "registered_attendees": 14855,
+  "walkins": 1118,
+  "unique_attendees_uncapped": 15973,
+  "unique_attendees": 15973,
+  "capacity_cap": 20000,
+  "spend_inr": 1729200,
+  "budget_inr": 1750000,
+  "within_budget": true,
+  "cac_per_attendee": 108,
+  "show_up": 0.7841
+ },
+ "monte_carlo": {
+  "P10": 6383,
+  "P25": 7100,
+  "P50": 7976,
+  "P75": 8952,
+  "P90": 9894,
+  "prob_ge_base": 0.538,
+  "prob_ge_stretch": 0.0
+ },
+ "tornado": {
+  "Regs per ambassador (10 / 30)": {
+   "low": 6203,
+   "high": 9481,
+   "swing": 3278
+  },
+  "Ambassadors (120 / 300)": {
+   "low": 6530,
+   "high": 9481,
+   "swing": 2951
+  },
+  "Regs per partner (15 / 40)": {
+   "low": 6738,
+   "high": 9497,
+   "swing": 2759
+  },
+  "Partner colleges (80 / 180)": {
+   "low": 6922,
+   "high": 9221,
+   "swing": 2299
+  },
+  "Real-world show-up haircut (0.72 / 0.95)": {
+   "low": 6642,
+   "high": 8764,
+   "swing": 2122
+  },
+  "Organic regs (800 / 2,500)": {
+   "low": 7248,
+   "high": 8690,
+   "swing": 1442
+  },
+  "No-show programme lift (0.98 / 1.12)": {
+   "low": 7319,
+   "high": 8364,
+   "swing": 1045
+  },
+  "Referral multiplier (0.7 / 1.4)": {
+   "low": 7540,
+   "high": 8243,
+   "swing": 703
+  }
+ },
+ "triangulation": {
+  "bottom_up_channels": 7842,
+  "penetration_of_1hr_students": {
+   "implied_share": 0.0112,
+   "peer_range": "1.5-3% (single DU college fest ~30k cumulative; Rendezvous 1.6L claimed /2.5)"
+  },
+  "budget_over_blended_cac": {
+   "budget": 1100000,
+   "blended_cac_2025_reallocated": 104,
+   "implied_attendees": 11236
+  },
+  "capacity_ceiling": 20000
+ },
+ "city_robustness": {
+  "Delhi NCR": {
+   "cost_inflation": 1.2,
+   "daily_capacity": 15000,
+   "unique_attendees": 7842,
+   "capacity_cap": 20000,
+   "spend_inr": 1017289
+  },
+  "Bengaluru": {
+   "cost_inflation": 1.25,
+   "daily_capacity": 10000,
+   "unique_attendees": 7820,
+   "capacity_cap": 13333,
+   "spend_inr": 1051356
+  },
+  "Mumbai": {
+   "cost_inflation": 1.35,
+   "daily_capacity": 12000,
+   "unique_attendees": 7782,
+   "capacity_cap": 16000,
+   "spend_inr": 1119492
+  }
+ }
+}

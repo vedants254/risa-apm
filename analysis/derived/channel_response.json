@@ -1,0 +1,1420 @@
+{
+ "description": "Spend -> registrations/attendees response per campaign. All curves are MODEL ESTIMATES on one season of weekly data (12 weeks, 3-9 spend postings per campaign). Treat marginal CAC as directional.",
+ "per_campaign": {
+  "C01": {
+   "pre_event_spend_inr": 42000,
+   "registrations": 520,
+   "registered_attendees": 390,
+   "avg_cac_per_registration_inr": 81,
+   "avg_cac_per_attendee_inr": 108,
+   "early": {
+    "spend_inr": 30100,
+    "registrations": 312,
+    "registered_attendees": 238,
+    "cac_per_registration_inr": 96,
+    "cac_per_attendee_inr": 126,
+    "registrations_per_1k_inr": 10.37
+   },
+   "late": {
+    "spend_inr": 11900,
+    "registrations": 208,
+    "registered_attendees": 152,
+    "cac_per_registration_inr": 57,
+    "cac_per_attendee_inr": 78,
+    "registrations_per_1k_inr": 17.48
+   },
+   "marginal_cac_per_registration_inr_late_window": 57,
+   "marginal_cac_per_attendee_inr_late_window": 78,
+   "efficiency_change_late_vs_early": 1.69,
+   "cumulative_power_fit": {
+    "regs_vs_cum_spend": {
+     "exponent": 1.504,
+     "ci95": [
+      1.328,
+      1.681
+     ],
+     "r2": 0.973,
+     "n_points": 12
+    },
+    "regs_vs_weeks_only": {
+     "exponent": 1.373,
+     "ci95": [
+      1.231,
+      1.516
+     ],
+     "r2": 0.979,
+     "n_points": 12
+    },
+    "identified": false
+   },
+   "spend_postings": 9
+  },
+  "C02": {
+   "pre_event_spend_inr": 93000,
+   "registrations": 680,
+   "registered_attendees": 340,
+   "avg_cac_per_registration_inr": 137,
+   "avg_cac_per_attendee_inr": 274,
+   "early": {
+    "spend_inr": 67200,
+    "registrations": 541,
+    "registered_attendees": 266,
+    "cac_per_registration_inr": 124,
+    "cac_per_attendee_inr": 253,
+    "registrations_per_1k_inr": 8.05
+   },
+   "late": {
+    "spend_inr": 25800,
+    "registrations": 139,
+    "registered_attendees": 74,
+    "cac_per_registration_inr": 186,
+    "cac_per_attendee_inr": 349,
+    "registrations_per_1k_inr": 5.39
+   },
+   "marginal_cac_per_registration_inr_late_window": 186,
+   "marginal_cac_per_attendee_inr_late_window": 349,
+   "efficiency_change_late_vs_early": 0.67,
+   "cumulative_power_fit": {
+    "regs_vs_cum_spend": {
+     "exponent": 1.303,
+     "ci95": [
+      0.992,
+      1.614
+     ],
+     "r2": 0.909,
+     "n_points": 11
+    },
+    "regs_vs_weeks_only": {
+     "exponent": 1.256,
+     "ci95": [
+      0.949,
+      1.564
+     ],
+     "r2": 0.905,
+     "n_points": 11
+    },
+    "identified": false
+   },
+   "spend_postings": 9
+  },
+  "C03": {
+   "pre_event_spend_inr": 61000,
+   "registrations": 350,
+   "registered_attendees": 175,
+   "avg_cac_per_registration_inr": 174,
+   "avg_cac_per_attendee_inr": 349,
+   "early": {
+    "spend_inr": 42700,
+    "registrations": 174,
+    "registered_attendees": 88,
+    "cac_per_registration_inr": 245,
+    "cac_per_attendee_inr": 485,
+    "registrations_per_1k_inr": 4.07
+   },
+   "late": {
+    "spend_inr": 18300,
+    "registrations": 176,
+    "registered_attendees": 87,
+    "cac_per_registration_inr": 104,
+    "cac_per_attendee_inr": 210,
+    "registrations_per_1k_inr": 9.62
+   },
+   "marginal_cac_per_registration_inr_late_window": 104,
+   "marginal_cac_per_attendee_inr_late_window": 210,
+   "efficiency_change_late_vs_early": 2.36,
+   "cumulative_power_fit": {
+    "regs_vs_cum_spend": {
+     "exponent": 1.312,
+     "ci95": [
+      0.994,
+      1.63
+     ],
+     "r2": 0.931,
+     "n_points": 9
+    },
+    "regs_vs_weeks_only": {
+     "exponent": 1.008,
+     "ci95": [
+      0.967,
+      1.049
+     ],
+     "r2": 0.998,
+     "n_points": 9
+    },
+    "identified": false
+   },
+   "spend_postings": 9
+  },
+  "C04": {
+   "pre_event_spend_inr": 31000,
+   "registrations": 450,
+   "registered_attendees": 385,
+   "avg_cac_per_registration_inr": 69,
+   "avg_cac_per_attendee_inr": 81,
+   "early": {
+    "spend_inr": 17325,
+    "registrations": 127,
+    "registered_attendees": 110,
+    "cac_per_registration_inr": 136,
+    "cac_per_attendee_inr": 158,
+    "registrations_per_1k_inr": 7.33
+   },
+   "late": {
+    "spend_inr": 13675,
+    "registrations": 323,
+    "registered_attendees": 275,
+    "cac_per_registration_inr": 42,
+    "cac_per_attendee_inr": 50,
+    "registrations_per_1k_inr": 23.62
+   },
+   "marginal_cac_per_registration_inr_late_window": 42,
+   "marginal_cac_per_attendee_inr_late_window": 50,
+   "efficiency_change_late_vs_early": 3.22,
+   "cumulative_power_fit": {
+    "regs_vs_cum_spend": {
+     "exponent": 1.563,
+     "ci95": [
+      1.319,
+      1.807
+     ],
+     "r2": 0.959,
+     "n_points": 11
+    },
+    "regs_vs_weeks_only": {
+     "exponent": 1.473,
+     "ci95": [
+      1.247,
+      1.699
+     ],
+     "r2": 0.96,
+     "n_points": 11
+    },
+    "identified": false
+   },
+   "spend_postings": 8
+  },
+  "C05": {
+   "pre_event_spend_inr": 19500,
+   "registrations": 350,
+   "registered_attendees": 275,
+   "avg_cac_per_registration_inr": 56,
+   "avg_cac_per_attendee_inr": 71,
+   "early": {
+    "spend_inr": 13650,
+    "registrations": 94,
+    "registered_attendees": 75,
+    "cac_per_registration_inr": 145,
+    "cac_per_attendee_inr": 182,
+    "registrations_per_1k_inr": 6.89
+   },
+   "late": {
+    "spend_inr": 5850,
+    "registrations": 256,
+    "registered_attendees": 200,
+    "cac_per_registration_inr": 23,
+    "cac_per_attendee_inr": 29,
+    "registrations_per_1k_inr": 43.76
+   },
+   "marginal_cac_per_registration_inr_late_window": 23,
+   "marginal_cac_per_attendee_inr_late_window": 29,
+   "efficiency_change_late_vs_early": 6.35,
+   "cumulative_power_fit": {
+    "regs_vs_cum_spend": {
+     "exponent": 1.512,
+     "ci95": [
+      1.214,
+      1.81
+     ],
+     "r2": 0.954,
+     "n_points": 9
+    },
+    "regs_vs_weeks_only": {
+     "exponent": 1.612,
+     "ci95": [
+      1.51,
+      1.714
+     ],
+     "r2": 0.995,
+     "n_points": 9
+    },
+    "identified": false
+   },
+   "spend_postings": 9
+  },
+  "C06": {
+   "pre_event_spend_inr": 14000,
+   "registrations": 250,
+   "registered_attendees": 195,
+   "avg_cac_per_registration_inr": 56,
+   "avg_cac_per_attendee_inr": 72,
+   "early": {
+    "spend_inr": 9800,
+    "registrations": 166,
+    "registered_attendees": 132,
+    "cac_per_registration_inr": 59,
+    "cac_per_attendee_inr": 74,
+    "registrations_per_1k_inr": 16.94
+   },
+   "late": {
+    "spend_inr": 4200,
+    "registrations": 84,
+    "registered_attendees": 63,
+    "cac_per_registration_inr": 50,
+    "cac_per_attendee_inr": 67,
+    "registrations_per_1k_inr": 20.0
+   },
+   "marginal_cac_per_registration_inr_late_window": 50,
+   "marginal_cac_per_attendee_inr_late_window": 67,
+   "efficiency_change_late_vs_early": 1.18,
+   "cumulative_power_fit": {
+    "regs_vs_cum_spend": {
+     "exponent": 1.082,
+     "ci95": [
+      0.957,
+      1.207
+     ],
+     "r2": 0.974,
+     "n_points": 12
+    },
+    "regs_vs_weeks_only": {
+     "exponent": 0.966,
+     "ci95": [
+      0.925,
+      1.006
+     ],
+     "r2": 0.996,
+     "n_points": 12
+    },
+    "identified": false
+   },
+   "spend_postings": 8
+  },
+  "C07": {
+   "pre_event_spend_inr": 16000,
+   "registrations": 200,
+   "registered_attendees": 165,
+   "avg_cac_per_registration_inr": 80,
+   "avg_cac_per_attendee_inr": 97,
+   "early": {
+    "spend_inr": 8800,
+    "registrations": 92,
+    "registered_attendees": 74,
+    "cac_per_registration_inr": 96,
+    "cac_per_attendee_inr": 119,
+    "registrations_per_1k_inr": 10.45
+   },
+   "late": {
+    "spend_inr": 7200,
+    "registrations": 108,
+    "registered_attendees": 91,
+    "cac_per_registration_inr": 67,
+    "cac_per_attendee_inr": 79,
+    "registrations_per_1k_inr": 15.0
+   },
+   "marginal_cac_per_registration_inr_late_window": 67,
+   "marginal_cac_per_attendee_inr_late_window": 79,
+   "efficiency_change_late_vs_early": 1.44,
+   "cumulative_power_fit": {
+    "regs_vs_cum_spend": {
+     "exponent": 1.279,
+     "ci95": [
+      1.125,
+      1.433
+     ],
+     "r2": 0.982,
+     "n_points": 9
+    },
+    "regs_vs_weeks_only": {
+     "exponent": 1.322,
+     "ci95": [
+      1.18,
+      1.463
+     ],
+     "r2": 0.986,
+     "n_points": 9
+    },
+    "identified": false
+   },
+   "spend_postings": 8
+  }
+ },
+ "pooled_panel_weekly": {
+  "with_week_fe": {
+   "elasticity": 0.1181,
+   "ci95": [
+    -0.0324,
+    0.2687
+   ],
+   "p_value": 0.124,
+   "n": 73
+  },
+  "without_week_fe": {
+   "elasticity": 0.075,
+   "ci95": [
+    -0.0553,
+    0.2054
+   ],
+   "p_value": 0.259,
+   "n": 73
+  }
+ },
+ "cross_campaign_fit": {
+  "regs_vs_spend": {
+   "exponent": 0.487,
+   "ci95": [
+    0.1,
+    0.873
+   ],
+   "r2": 0.677,
+   "n_points": 7
+  },
+  "attendees_vs_spend": {
+   "exponent": 0.215,
+   "ci95": [
+    -0.336,
+    0.767
+   ],
+   "r2": 0.167,
+   "n_points": 7
+  }
+ },
+ "period_comparison": {
+  "early_2025-01-20..2025-03-14": {
+   "spend_inr": 189575,
+   "registrations": 1506,
+   "registered_attendees": 983,
+   "cac_per_registration_inr": 126,
+   "cac_per_attendee_inr": 193,
+   "registrations_per_1k_inr": 7.94,
+   "days": 54,
+   "registrations_per_day": 27.9,
+   "spend_per_day": 3511
+  },
+  "late_2025-03-15..2025-04-11": {
+   "spend_inr": 86925,
+   "registrations": 1294,
+   "registered_attendees": 942,
+   "cac_per_registration_inr": 67,
+   "cac_per_attendee_inr": 92,
+   "registrations_per_1k_inr": 14.89,
+   "days": 28,
+   "registrations_per_day": 46.2,
+   "spend_per_day": 3104
+  }
+ },
+ "reliability": {
+  "spend_and_time_confounded": "cumulative spend and cumulative registrations both rise with time; the time-only curve fits as well as the spend curve and exponents come out > 1, so per-campaign response curves are not identified. The late-window CAC is used as the marginal-cost proxy instead.",
+  "lumpy_ledger_spend": "spend is posted on 56 dates (3-9 per campaign), not daily, so weekly spend timing is noisy.",
+  "no_variation_experiments": "no campaign was paused or scaled independently; there is no holdout."
+ },
+ "weekly": [
+  {
+   "campaign_id": "C01",
+   "week": 0,
+   "spend": 4300,
+   "clicks": 114,
+   "regs": 14,
+   "attendees": 12,
+   "spend_trailing_14d": 4300.0,
+   "cum_spend": 4300,
+   "cum_regs": 14,
+   "cum_att": 12
+  },
+  {
+   "campaign_id": "C01",
+   "week": 1,
+   "spend": 6450,
+   "clicks": 495,
+   "regs": 47,
+   "attendees": 37,
+   "spend_trailing_14d": 10750.0,
+   "cum_spend": 10750,
+   "cum_regs": 61,
+   "cum_att": 49
+  },
+  {
+   "campaign_id": "C01",
+   "week": 2,
+   "spend": 0,
+   "clicks": 414,
+   "regs": 49,
+   "attendees": 39,
+   "spend_trailing_14d": 6450.0,
+   "cum_spend": 10750,
+   "cum_regs": 110,
+   "cum_att": 88
+  },
+  {
+   "campaign_id": "C01",
+   "week": 3,
+   "spend": 6450,
+   "clicks": 464,
+   "regs": 38,
+   "attendees": 30,
+   "spend_trailing_14d": 6450.0,
+   "cum_spend": 17200,
+   "cum_regs": 148,
+   "cum_att": 118
+  },
+  {
+   "campaign_id": "C01",
+   "week": 4,
+   "spend": 6450,
+   "clicks": 455,
+   "regs": 56,
+   "attendees": 37,
+   "spend_trailing_14d": 12900.0,
+   "cum_spend": 23650,
+   "cum_regs": 204,
+   "cum_att": 155
+  },
+  {
+   "campaign_id": "C01",
+   "week": 5,
+   "spend": 0,
+   "clicks": 422,
+   "regs": 39,
+   "attendees": 28,
+   "spend_trailing_14d": 6450.0,
+   "cum_spend": 23650,
+   "cum_regs": 243,
+   "cum_att": 183
+  },
+  {
+   "campaign_id": "C01",
+   "week": 6,
+   "spend": 6450,
+   "clicks": 464,
+   "regs": 38,
+   "attendees": 30,
+   "spend_trailing_14d": 6450.0,
+   "cum_spend": 30100,
+   "cum_regs": 281,
+   "cum_att": 213
+  },
+  {
+   "campaign_id": "C01",
+   "week": 7,
+   "spend": 0,
+   "clicks": 401,
+   "regs": 42,
+   "attendees": 35,
+   "spend_trailing_14d": 6450.0,
+   "cum_spend": 30100,
+   "cum_regs": 323,
+   "cum_att": 248
+  },
+  {
+   "campaign_id": "C01",
+   "week": 8,
+   "spend": 4300,
+   "clicks": 444,
+   "regs": 63,
+   "attendees": 44,
+   "spend_trailing_14d": 4300.0,
+   "cum_spend": 34400,
+   "cum_regs": 386,
+   "cum_att": 292
+  },
+  {
+   "campaign_id": "C01",
+   "week": 9,
+   "spend": 4300,
+   "clicks": 429,
+   "regs": 60,
+   "attendees": 42,
+   "spend_trailing_14d": 8600.0,
+   "cum_spend": 38700,
+   "cum_regs": 446,
+   "cum_att": 334
+  },
+  {
+   "campaign_id": "C01",
+   "week": 10,
+   "spend": 0,
+   "clicks": 409,
+   "regs": 48,
+   "attendees": 37,
+   "spend_trailing_14d": 4300.0,
+   "cum_spend": 38700,
+   "cum_regs": 494,
+   "cum_att": 371
+  },
+  {
+   "campaign_id": "C01",
+   "week": 11,
+   "spend": 3300,
+   "clicks": 351,
+   "regs": 26,
+   "attendees": 19,
+   "spend_trailing_14d": 3300.0,
+   "cum_spend": 42000,
+   "cum_regs": 520,
+   "cum_att": 390
+  },
+  {
+   "campaign_id": "C02",
+   "week": 0,
+   "spend": 0,
+   "clicks": 0,
+   "regs": 0,
+   "attendees": 0,
+   "spend_trailing_14d": 0.0,
+   "cum_spend": 0,
+   "cum_regs": 0,
+   "cum_att": 0
+  },
+  {
+   "campaign_id": "C02",
+   "week": 1,
+   "spend": 9600,
+   "clicks": 337,
+   "regs": 26,
+   "attendees": 8,
+   "spend_trailing_14d": 9600.0,
+   "cum_spend": 9600,
+   "cum_regs": 26,
+   "cum_att": 8
+  },
+  {
+   "campaign_id": "C02",
+   "week": 2,
+   "spend": 14400,
+   "clicks": 972,
+   "regs": 110,
+   "attendees": 64,
+   "spend_trailing_14d": 24000.0,
+   "cum_spend": 24000,
+   "cum_regs": 136,
+   "cum_att": 72
+  },
+  {
+   "campaign_id": "C02",
+   "week": 3,
+   "spend": 0,
+   "clicks": 986,
+   "regs": 124,
+   "attendees": 59,
+   "spend_trailing_14d": 14400.0,
+   "cum_spend": 24000,
+   "cum_regs": 260,
+   "cum_att": 131
+  },
+  {
+   "campaign_id": "C02",
+   "week": 4,
+   "spend": 14400,
+   "clicks": 1067,
+   "regs": 114,
+   "attendees": 51,
+   "spend_trailing_14d": 14400.0,
+   "cum_spend": 38400,
+   "cum_regs": 374,
+   "cum_att": 182
+  },
+  {
+   "campaign_id": "C02",
+   "week": 5,
+   "spend": 14400,
+   "clicks": 988,
+   "regs": 105,
+   "attendees": 56,
+   "spend_trailing_14d": 28800.0,
+   "cum_spend": 52800,
+   "cum_regs": 479,
+   "cum_att": 238
+  },
+  {
+   "campaign_id": "C02",
+   "week": 6,
+   "spend": 14400,
+   "clicks": 871,
+   "regs": 35,
+   "attendees": 14,
+   "spend_trailing_14d": 28800.0,
+   "cum_spend": 67200,
+   "cum_regs": 514,
+   "cum_att": 252
+  },
+  {
+   "campaign_id": "C02",
+   "week": 7,
+   "spend": 0,
+   "clicks": 329,
+   "regs": 45,
+   "attendees": 27,
+   "spend_trailing_14d": 14400.0,
+   "cum_spend": 67200,
+   "cum_regs": 559,
+   "cum_att": 279
+  },
+  {
+   "campaign_id": "C02",
+   "week": 8,
+   "spend": 9600,
+   "clicks": 349,
+   "regs": 26,
+   "attendees": 16,
+   "spend_trailing_14d": 9600.0,
+   "cum_spend": 76800,
+   "cum_regs": 585,
+   "cum_att": 295
+  },
+  {
+   "campaign_id": "C02",
+   "week": 9,
+   "spend": 9600,
+   "clicks": 334,
+   "regs": 47,
+   "attendees": 22,
+   "spend_trailing_14d": 19200.0,
+   "cum_spend": 86400,
+   "cum_regs": 632,
+   "cum_att": 317
+  },
+  {
+   "campaign_id": "C02",
+   "week": 10,
+   "spend": 0,
+   "clicks": 379,
+   "regs": 38,
+   "attendees": 18,
+   "spend_trailing_14d": 9600.0,
+   "cum_spend": 86400,
+   "cum_regs": 670,
+   "cum_att": 335
+  },
+  {
+   "campaign_id": "C02",
+   "week": 11,
+   "spend": 6600,
+   "clicks": 255,
+   "regs": 10,
+   "attendees": 5,
+   "spend_trailing_14d": 6600.0,
+   "cum_spend": 93000,
+   "cum_regs": 680,
+   "cum_att": 340
+  },
+  {
+   "campaign_id": "C03",
+   "week": 0,
+   "spend": 0,
+   "clicks": 0,
+   "regs": 0,
+   "attendees": 0,
+   "spend_trailing_14d": 0.0,
+   "cum_spend": 0,
+   "cum_regs": 0,
+   "cum_att": 0
+  },
+  {
+   "campaign_id": "C03",
+   "week": 1,
+   "spend": 0,
+   "clicks": 0,
+   "regs": 0,
+   "attendees": 0,
+   "spend_trailing_14d": 0.0,
+   "cum_spend": 0,
+   "cum_regs": 0,
+   "cum_att": 0
+  },
+  {
+   "campaign_id": "C03",
+   "week": 2,
+   "spend": 0,
+   "clicks": 0,
+   "regs": 0,
+   "attendees": 0,
+   "spend_trailing_14d": 0.0,
+   "cum_spend": 0,
+   "cum_regs": 0,
+   "cum_att": 0
+  },
+  {
+   "campaign_id": "C03",
+   "week": 3,
+   "spend": 15250,
+   "clicks": 594,
+   "regs": 39,
+   "attendees": 17,
+   "spend_trailing_14d": 15250.0,
+   "cum_spend": 15250,
+   "cum_regs": 39,
+   "cum_att": 17
+  },
+  {
+   "campaign_id": "C03",
+   "week": 4,
+   "spend": 0,
+   "clicks": 595,
+   "regs": 37,
+   "attendees": 21,
+   "spend_trailing_14d": 15250.0,
+   "cum_spend": 15250,
+   "cum_regs": 76,
+   "cum_att": 38
+  },
+  {
+   "campaign_id": "C03",
+   "week": 5,
+   "spend": 9150,
+   "clicks": 634,
+   "regs": 37,
+   "attendees": 20,
+   "spend_trailing_14d": 9150.0,
+   "cum_spend": 24400,
+   "cum_regs": 113,
+   "cum_att": 58
+  },
+  {
+   "campaign_id": "C03",
+   "week": 6,
+   "spend": 9150,
+   "clicks": 541,
+   "regs": 33,
+   "attendees": 21,
+   "spend_trailing_14d": 18300.0,
+   "cum_spend": 33550,
+   "cum_regs": 146,
+   "cum_att": 79
+  },
+  {
+   "campaign_id": "C03",
+   "week": 7,
+   "spend": 9150,
+   "clicks": 618,
+   "regs": 38,
+   "attendees": 14,
+   "spend_trailing_14d": 18300.0,
+   "cum_spend": 42700,
+   "cum_regs": 184,
+   "cum_att": 93
+  },
+  {
+   "campaign_id": "C03",
+   "week": 8,
+   "spend": 6100,
+   "clicks": 642,
+   "regs": 40,
+   "attendees": 21,
+   "spend_trailing_14d": 15250.0,
+   "cum_spend": 48800,
+   "cum_regs": 224,
+   "cum_att": 114
+  },
+  {
+   "campaign_id": "C03",
+   "week": 9,
+   "spend": 0,
+   "clicks": 576,
+   "regs": 52,
+   "attendees": 26,
+   "spend_trailing_14d": 6100.0,
+   "cum_spend": 48800,
+   "cum_regs": 276,
+   "cum_att": 140
+  },
+  {
+   "campaign_id": "C03",
+   "week": 10,
+   "spend": 6100,
+   "clicks": 597,
+   "regs": 47,
+   "attendees": 23,
+   "spend_trailing_14d": 6100.0,
+   "cum_spend": 54900,
+   "cum_regs": 323,
+   "cum_att": 163
+  },
+  {
+   "campaign_id": "C03",
+   "week": 11,
+   "spend": 6100,
+   "clicks": 477,
+   "regs": 27,
+   "attendees": 12,
+   "spend_trailing_14d": 12200.0,
+   "cum_spend": 61000,
+   "cum_regs": 350,
+   "cum_att": 175
+  },
+  {
+   "campaign_id": "C04",
+   "week": 0,
+   "spend": 0,
+   "clicks": 0,
+   "regs": 0,
+   "attendees": 0,
+   "spend_trailing_14d": 0.0,
+   "cum_spend": 0,
+   "cum_regs": 0,
+   "cum_att": 0
+  },
+  {
+   "campaign_id": "C04",
+   "week": 1,
+   "spend": 3150,
+   "clicks": 387,
+   "regs": 11,
+   "attendees": 9,
+   "spend_trailing_14d": 3150.0,
+   "cum_spend": 3150,
+   "cum_regs": 11,
+   "cum_att": 9
+  },
+  {
+   "campaign_id": "C04",
+   "week": 2,
+   "spend": 4725,
+   "clicks": 462,
+   "regs": 24,
+   "attendees": 22,
+   "spend_trailing_14d": 7875.0,
+   "cum_spend": 7875,
+   "cum_regs": 35,
+   "cum_att": 31
+  },
+  {
+   "campaign_id": "C04",
+   "week": 3,
+   "spend": 0,
+   "clicks": 529,
+   "regs": 28,
+   "attendees": 22,
+   "spend_trailing_14d": 4725.0,
+   "cum_spend": 7875,
+   "cum_regs": 63,
+   "cum_att": 53
+  },
+  {
+   "campaign_id": "C04",
+   "week": 4,
+   "spend": 0,
+   "clicks": 489,
+   "regs": 21,
+   "attendees": 18,
+   "spend_trailing_14d": 0.0,
+   "cum_spend": 7875,
+   "cum_regs": 84,
+   "cum_att": 71
+  },
+  {
+   "campaign_id": "C04",
+   "week": 5,
+   "spend": 4725,
+   "clicks": 467,
+   "regs": 8,
+   "attendees": 8,
+   "spend_trailing_14d": 4725.0,
+   "cum_spend": 12600,
+   "cum_regs": 92,
+   "cum_att": 79
+  },
+  {
+   "campaign_id": "C04",
+   "week": 6,
+   "spend": 0,
+   "clicks": 464,
+   "regs": 0,
+   "attendees": 0,
+   "spend_trailing_14d": 4725.0,
+   "cum_spend": 12600,
+   "cum_regs": 92,
+   "cum_att": 79
+  },
+  {
+   "campaign_id": "C04",
+   "week": 7,
+   "spend": 4725,
+   "clicks": 752,
+   "regs": 64,
+   "attendees": 60,
+   "spend_trailing_14d": 4725.0,
+   "cum_spend": 17325,
+   "cum_regs": 156,
+   "cum_att": 139
+  },
+  {
+   "campaign_id": "C04",
+   "week": 8,
+   "spend": 4725,
+   "clicks": 842,
+   "regs": 77,
+   "attendees": 67,
+   "spend_trailing_14d": 9450.0,
+   "cum_spend": 22050,
+   "cum_regs": 233,
+   "cum_att": 206
+  },
+  {
+   "campaign_id": "C04",
+   "week": 9,
+   "spend": 3150,
+   "clicks": 859,
+   "regs": 80,
+   "attendees": 65,
+   "spend_trailing_14d": 7875.0,
+   "cum_spend": 25200,
+   "cum_regs": 313,
+   "cum_att": 271
+  },
+  {
+   "campaign_id": "C04",
+   "week": 10,
+   "spend": 3150,
+   "clicks": 888,
+   "regs": 97,
+   "attendees": 79,
+   "spend_trailing_14d": 6300.0,
+   "cum_spend": 28350,
+   "cum_regs": 410,
+   "cum_att": 350
+  },
+  {
+   "campaign_id": "C04",
+   "week": 11,
+   "spend": 2650,
+   "clicks": 597,
+   "regs": 40,
+   "attendees": 35,
+   "spend_trailing_14d": 5800.0,
+   "cum_spend": 31000,
+   "cum_regs": 450,
+   "cum_att": 385
+  },
+  {
+   "campaign_id": "C05",
+   "week": 0,
+   "spend": 0,
+   "clicks": 0,
+   "regs": 0,
+   "attendees": 0,
+   "spend_trailing_14d": 0.0,
+   "cum_spend": 0,
+   "cum_regs": 0,
+   "cum_att": 0
+  },
+  {
+   "campaign_id": "C05",
+   "week": 1,
+   "spend": 0,
+   "clicks": 0,
+   "regs": 0,
+   "attendees": 0,
+   "spend_trailing_14d": 0.0,
+   "cum_spend": 0,
+   "cum_regs": 0,
+   "cum_att": 0
+  },
+  {
+   "campaign_id": "C05",
+   "week": 2,
+   "spend": 0,
+   "clicks": 0,
+   "regs": 0,
+   "attendees": 0,
+   "spend_trailing_14d": 0.0,
+   "cum_spend": 0,
+   "cum_regs": 0,
+   "cum_att": 0
+  },
+  {
+   "campaign_id": "C05",
+   "week": 3,
+   "spend": 1950,
+   "clicks": 255,
+   "regs": 11,
+   "attendees": 9,
+   "spend_trailing_14d": 1950.0,
+   "cum_spend": 1950,
+   "cum_regs": 11,
+   "cum_att": 9
+  },
+  {
+   "campaign_id": "C05",
+   "week": 4,
+   "spend": 2925,
+   "clicks": 306,
+   "regs": 18,
+   "attendees": 12,
+   "spend_trailing_14d": 4875.0,
+   "cum_spend": 4875,
+   "cum_regs": 29,
+   "cum_att": 21
+  },
+  {
+   "campaign_id": "C05",
+   "week": 5,
+   "spend": 2925,
+   "clicks": 358,
+   "regs": 27,
+   "attendees": 23,
+   "spend_trailing_14d": 5850.0,
+   "cum_spend": 7800,
+   "cum_regs": 56,
+   "cum_att": 44
+  },
+  {
+   "campaign_id": "C05",
+   "week": 6,
+   "spend": 2925,
+   "clicks": 323,
+   "regs": 28,
+   "attendees": 23,
+   "spend_trailing_14d": 5850.0,
+   "cum_spend": 10725,
+   "cum_regs": 84,
+   "cum_att": 67
+  },
+  {
+   "campaign_id": "C05",
+   "week": 7,
+   "spend": 2925,
+   "clicks": 369,
+   "regs": 33,
+   "attendees": 26,
+   "spend_trailing_14d": 5850.0,
+   "cum_spend": 13650,
+   "cum_regs": 117,
+   "cum_att": 93
+  },
+  {
+   "campaign_id": "C05",
+   "week": 8,
+   "spend": 1950,
+   "clicks": 547,
+   "regs": 67,
+   "attendees": 53,
+   "spend_trailing_14d": 4875.0,
+   "cum_spend": 15600,
+   "cum_regs": 184,
+   "cum_att": 146
+  },
+  {
+   "campaign_id": "C05",
+   "week": 9,
+   "spend": 0,
+   "clicks": 467,
+   "regs": 59,
+   "attendees": 45,
+   "spend_trailing_14d": 1950.0,
+   "cum_spend": 15600,
+   "cum_regs": 243,
+   "cum_att": 191
+  },
+  {
+   "campaign_id": "C05",
+   "week": 10,
+   "spend": 1950,
+   "clicks": 483,
+   "regs": 68,
+   "attendees": 56,
+   "spend_trailing_14d": 1950.0,
+   "cum_spend": 17550,
+   "cum_regs": 311,
+   "cum_att": 247
+  },
+  {
+   "campaign_id": "C05",
+   "week": 11,
+   "spend": 1950,
+   "clicks": 345,
+   "regs": 39,
+   "attendees": 28,
+   "spend_trailing_14d": 3900.0,
+   "cum_spend": 19500,
+   "cum_regs": 350,
+   "cum_att": 275
+  },
+  {
+   "campaign_id": "C06",
+   "week": 0,
+   "spend": 1400,
+   "clicks": 192,
+   "regs": 22,
+   "attendees": 18,
+   "spend_trailing_14d": 1400.0,
+   "cum_spend": 1400,
+   "cum_regs": 22,
+   "cum_att": 18
+  },
+  {
+   "campaign_id": "C06",
+   "week": 1,
+   "spend": 2100,
+   "clicks": 203,
+   "regs": 26,
+   "attendees": 20,
+   "spend_trailing_14d": 3500.0,
+   "cum_spend": 3500,
+   "cum_regs": 48,
+   "cum_att": 38
+  },
+  {
+   "campaign_id": "C06",
+   "week": 2,
+   "spend": 2100,
+   "clicks": 190,
+   "regs": 17,
+   "attendees": 12,
+   "spend_trailing_14d": 4200.0,
+   "cum_spend": 5600,
+   "cum_regs": 65,
+   "cum_att": 50
+  },
+  {
+   "campaign_id": "C06",
+   "week": 3,
+   "spend": 0,
+   "clicks": 191,
+   "regs": 29,
+   "attendees": 26,
+   "spend_trailing_14d": 2100.0,
+   "cum_spend": 5600,
+   "cum_regs": 94,
+   "cum_att": 76
+  },
+  {
+   "campaign_id": "C06",
+   "week": 4,
+   "spend": 2100,
+   "clicks": 203,
+   "regs": 26,
+   "attendees": 19,
+   "spend_trailing_14d": 2100.0,
+   "cum_spend": 7700,
+   "cum_regs": 120,
+   "cum_att": 95
+  },
+  {
+   "campaign_id": "C06",
+   "week": 5,
+   "spend": 0,
+   "clicks": 205,
+   "regs": 17,
+   "attendees": 15,
+   "spend_trailing_14d": 2100.0,
+   "cum_spend": 7700,
+   "cum_regs": 137,
+   "cum_att": 110
+  },
+  {
+   "campaign_id": "C06",
+   "week": 6,
+   "spend": 2100,
+   "clicks": 213,
+   "regs": 16,
+   "attendees": 11,
+   "spend_trailing_14d": 2100.0,
+   "cum_spend": 9800,
+   "cum_regs": 153,
+   "cum_att": 121
+  },
+  {
+   "campaign_id": "C06",
+   "week": 7,
+   "spend": 1400,
+   "clicks": 198,
+   "regs": 17,
+   "attendees": 14,
+   "spend_trailing_14d": 3500.0,
+   "cum_spend": 11200,
+   "cum_regs": 170,
+   "cum_att": 135
+  },
+  {
+   "campaign_id": "C06",
+   "week": 8,
+   "spend": 0,
+   "clicks": 203,
+   "regs": 21,
+   "attendees": 14,
+   "spend_trailing_14d": 1400.0,
+   "cum_spend": 11200,
+   "cum_regs": 191,
+   "cum_att": 149
+  },
+  {
+   "campaign_id": "C06",
+   "week": 9,
+   "spend": 1400,
+   "clicks": 211,
+   "regs": 22,
+   "attendees": 16,
+   "spend_trailing_14d": 1400.0,
+   "cum_spend": 12600,
+   "cum_regs": 213,
+   "cum_att": 165
+  },
+  {
+   "campaign_id": "C06",
+   "week": 10,
+   "spend": 0,
+   "clicks": 235,
+   "regs": 22,
+   "attendees": 18,
+   "spend_trailing_14d": 1400.0,
+   "cum_spend": 12600,
+   "cum_regs": 235,
+   "cum_att": 183
+  },
+  {
+   "campaign_id": "C06",
+   "week": 11,
+   "spend": 1400,
+   "clicks": 160,
+   "regs": 15,
+   "attendees": 12,
+   "spend_trailing_14d": 1400.0,
+   "cum_spend": 14000,
+   "cum_regs": 250,
+   "cum_att": 195
+  },
+  {
+   "campaign_id": "C07",
+   "week": 0,
+   "spend": 0,
+   "clicks": 0,
+   "regs": 0,
+   "attendees": 0,
+   "spend_trailing_14d": 0.0,
+   "cum_spend": 0,
+   "cum_regs": 0,
+   "cum_att": 0
+  },
+  {
+   "campaign_id": "C07",
+   "week": 1,
+   "spend": 0,
+   "clicks": 0,
+   "regs": 0,
+   "attendees": 0,
+   "spend_trailing_14d": 0.0,
+   "cum_spend": 0,
+   "cum_regs": 0,
+   "cum_att": 0
+  },
+  {
+   "campaign_id": "C07",
+   "week": 2,
+   "spend": 0,
+   "clicks": 0,
+   "regs": 0,
+   "attendees": 0,
+   "spend_trailing_14d": 0.0,
+   "cum_spend": 0,
+   "cum_regs": 0,
+   "cum_att": 0
+  },
+  {
+   "campaign_id": "C07",
+   "week": 3,
+   "spend": 1600,
+   "clicks": 88,
+   "regs": 10,
+   "attendees": 9,
+   "spend_trailing_14d": 1600.0,
+   "cum_spend": 1600,
+   "cum_regs": 10,
+   "cum_att": 9
+  },
+  {
+   "campaign_id": "C07",
+   "week": 4,
+   "spend": 2400,
+   "clicks": 331,
+   "regs": 28,
+   "attendees": 23,
+   "spend_trailing_14d": 4000.0,
+   "cum_spend": 4000,
+   "cum_regs": 38,
+   "cum_att": 32
+  },
+  {
+   "campaign_id": "C07",
+   "week": 5,
+   "spend": 2400,
+   "clicks": 289,
+   "regs": 16,
+   "attendees": 14,
+   "spend_trailing_14d": 4800.0,
+   "cum_spend": 6400,
+   "cum_regs": 54,
+   "cum_att": 46
+  },
+  {
+   "campaign_id": "C07",
+   "week": 6,
+   "spend": 2400,
+   "clicks": 297,
+   "regs": 24,
+   "attendees": 18,
+   "spend_trailing_14d": 4800.0,
+   "cum_spend": 8800,
+   "cum_regs": 78,
+   "cum_att": 64
+  },
+  {
+   "campaign_id": "C07",
+   "week": 7,
+   "spend": 2400,
+   "clicks": 318,
+   "regs": 19,
+   "attendees": 13,
+   "spend_trailing_14d": 4800.0,
+   "cum_spend": 11200,
+   "cum_regs": 97,
+   "cum_att": 77
+  },
+  {
+   "campaign_id": "C07",
+   "week": 8,
+   "spend": 0,
+   "clicks": 291,
+   "regs": 30,
+   "attendees": 25,
+   "spend_trailing_14d": 2400.0,
+   "cum_spend": 11200,
+   "cum_regs": 127,
+   "cum_att": 102
+  },
+  {
+   "campaign_id": "C07",
+   "week": 9,
+   "spend": 1600,
+   "clicks": 285,
+   "regs": 34,
+   "attendees": 27,
+   "spend_trailing_14d": 1600.0,
+   "cum_spend": 12800,
+   "cum_regs": 161,
+   "cum_att": 129
+  },
+  {
+   "campaign_id": "C07",
+   "week": 10,
+   "spend": 1600,
+   "clicks": 326,
+   "regs": 26,
+   "attendees": 25,
+   "spend_trailing_14d": 3200.0,
+   "cum_spend": 14400,
+   "cum_regs": 187,
+   "cum_att": 154
+  },
+  {
+   "campaign_id": "C07",
+   "week": 11,
+   "spend": 1600,
+   "clicks": 249,
+   "regs": 13,
+   "attendees": 11,
+   "spend_trailing_14d": 3200.0,
+   "cum_spend": 16000,
+   "cum_regs": 200,
+   "cum_att": 165
+  }
+ ]
+}

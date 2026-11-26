@@ -1,0 +1,122 @@
+{
+  "tables": {
+    "event": {
+      "source": "event",
+      "columns": {
+        "event_name": "Name",
+        "history_start": "Data From",
+        "history_end": "Data To",
+        "event_starts_at": "Opens",
+        "event_ends_at": "Closes",
+        "timezone": "Timezone",
+        "currency": "Currency"
+      }
+    },
+    "targets": {
+      "source": "targets",
+      "columns": {
+        "effective_at": "Effective",
+        "identified_external_people_goal": "People Goal",
+        "registration_goal": "Registration Goal",
+        "unique_external_visitors_goal": "Visitor Goal",
+        "marketing_budget_inr": "Budget",
+        "target_version": "Plan"
+      }
+    },
+    "campaigns": {
+      "source": "campaigns_export",
+      "columns": {
+        "campaign_name": "Campaign",
+        "channel": "Channel",
+        "target_audience": "Audience",
+        "objective": "Objective",
+        "owner_name": "Owner",
+        "created_at": "Created",
+        "planned_start_at": "Start",
+        "planned_end_at": "End",
+        "campaign_id": "Campaign Code"
+      }
+    },
+    "daily_marketing": {
+      "source": ["daily_spend_part1", "daily_spend_part2"],
+      "columns": {
+        "campaign_name": "Campaign",
+        "activity_date": "Date",
+        "impressions": "Impressions",
+        "clicks": "Clicks",
+        "reported_reach": "Reach",
+        "landing_page_sessions": "Sessions",
+        "registration_starts": "Form Starts",
+        "marketing_spend_inr": "Spend (Rs)",
+        "platform": "Source",
+        "activity_id": "Record ID"
+      }
+    },
+    "people": {
+      "source": "people",
+      "columns": {
+        "person_name": "Name",
+        "person_type": "Type",
+        "first_seen_at": "First Seen",
+        "first_touch_source": "Came From",
+        "first_campaign_name": "First Campaign",
+        "person_id": "Person ID"
+      }
+    },
+    "interactions": {
+      "source": "engagement",
+      "columns": {
+        "person_id": "Person ID",
+        "campaign_name": "Campaign",
+        "occurred_at": "When",
+        "event_type": "Action",
+        "detail": "Detail",
+        "interaction_id": "Interaction ID"
+      }
+    },
+    "registrations": {
+      "source": "registrations",
+      "columns": {
+        "registration_id": "Registration ID",
+        "person_id": "Person ID",
+        "campaign_name": "Campaign",
+        "registered_at": "Registered On"
+      }
+    },
+    "registration_history": {
+      "source": "status_history",
+      "columns": {
+        "history_id": "History ID",
+        "registration_id": "Registration ID",
+        "status": "Status",
+        "effective_at": "Effective"
+      }
+    },
+    "checkins": {
+      "source": "checkins",
+      "columns": {
+        "event_id": "Check-in ID",
+        "person_id": "Person ID",
+        "registration_id": "Registration ID",
+        "campaign_name": "Campaign",
+        "occurred_at": "Time",
+        "result": "Attended",
+        "verification": "Verified",
+        "source": "Method"
+      }
+    }
+  },
+  "date_order": "DMY",
+  "values": {
+    "person_type": { "Attendee": "external", "Internal": "internal", "Staff": "staff", "Test": "test" },
+    "checkin_result": { "Yes": "admitted", "No": "denied", "Pending": "pending" },
+    "checkin_verification": { "Y": "verified", "N": "unverified" },
+    "checkin_source": { "Scan": "scanner", "Manual": "manual" },
+    "registration_status": { "Interested": "interested", "Confirmed": "confirmed", "Cancelled": "cancelled", "On waitlist": "waitlisted" }
+  },
+  "person_flags": [],
+  "can_import": true,
+  "reason": "",
+  "assumptions": ["Owner IDs are not in the file; the app assigns them from owner names."],
+  "unmapped_columns": [{ "sheet": "people", "column": "City" }]
+}
