@@ -195,7 +195,7 @@ npm test                           # golden metrics, tools, grounding, copilot, 
 Reasoning models such as gpt-5.x reject a custom `temperature` and, on `/chat/completions`, accept function tools only with `reasoning_effort: "none"`. `lib/llm.ts` sends neither unless configured (`OPENAI_TEMPERATURE`, `OPENAI_REASONING_EFFORT`), and if the API rejects one it learns the fix from the error and retries once.
 
 ### Deployment (how the live app runs)
-- Hosting: Vercel, deployed from `app/` with `vercel --prod`; `app/vercel.json` pins the Next.js preset and the Mumbai region (bom1).
+- Hosting: Vercel, project root `app/`, connected to this repository, so every push to `main` deploys to production; `app/vercel.json` pins the Next.js preset and the Mumbai region (bom1).
 - Database: Supabase Postgres 17 (ap-south-1) through the transaction pooler (`DB_DRIVER=postgres`, `DATABASE_URL`, port 6543). The Data API is off and row-level security is on for every table, so only the app's server can reach the data. Schema versions are applied as migrations (`app/db/migrations/`), and every import is recorded in `dataset_versions`.
 - The first request on an empty database creates the tables and seeds `app/seed-data/Attendee_Dataset.xlsx` (about 9 seconds once).
 - Secrets live only in Vercel's encrypted environment and a local `.env` that git and `.vercelignore` exclude.
