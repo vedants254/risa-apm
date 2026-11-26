@@ -1,6 +1,7 @@
 # CampusFest Growth: RISA Labs Growth APM assignment
 
-Vedant Vikas Shelkar, IIT Madras. Challenge A (Attendee Growth), set in Delhi NCR.
+Vedant Vikas Shelkar, IIT Madras. 
+Challenge A (Attendee Growth) 
 
 The deck is [`deck/be23b014_vedantshelkar_attendee_challenge.pdf`](deck/be23b014_vedantshelkar_attendee_challenge.pdf) and the working product is live at **https://risa-apm-growth.vercel.app**.
 
