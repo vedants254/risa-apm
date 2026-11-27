@@ -4,12 +4,13 @@ Vedant Vikas Shelkar, IIT Madras.
 
 Challenge A (Attendee Growth) 
 
-[![Open the live app](assets/badge-live-app.svg)](https://risa-apm-growth.vercel.app) [![Read the deck (PDF)](assets/badge-deck.svg)](deck/be23b014_vedantshelkar_attendee_challenge.pdf)
+[![Open the live app](assets/badge-live-app.svg)](https://risa-apm-growth.vercel.app) [![Read the deck (PDF)](assets/badge-deck.svg)](deck/be23b014_vedantshelkar_attendee_challenge.pdf) [![Talk to AI analyst | Voice](assets/badge-voice.svg)](https://risa-apm-growth.vercel.app)
 
 🌐 **Live app:** [risa-apm-growth.vercel.app](https://risa-apm-growth.vercel.app)<br>
-📄 **Deck:** [be23b014_vedantshelkar_attendee_challenge.pdf](deck/be23b014_vedantshelkar_attendee_challenge.pdf)
+📄 **Deck:** [be23b014_vedantshelkar_attendee_challenge.pdf](deck/be23b014_vedantshelkar_attendee_challenge.pdf)<br>
+🎙️ **Voice analyst:** open the [app](https://risa-apm-growth.vercel.app), click Analyze with AI, then Voice (5-minute sessions)
 
-🔒 **Before you test it.** The app is open to anyone with the link, and the AI analyst runs on my personal OpenAI key, which has a $50 usage limit for security purposes, so an open link cannot run up unlimited costs. If that limit is ever reached, the analyst will return an error, but the dashboards, campaigns, tasks and data editor carry on working. If the data gets into a strange state while you are testing, Settings → Reset to original data puts the provided dataset back.
+🔒 **Before you test it.** The app is open to anyone with the link, and the AI analyst runs on my personal OpenAI key, which has a $50 usage limit for security purposes, so an open link cannot run up unlimited costs. If that limit is ever reached, the analyst will return an error, but the dashboards, campaigns, tasks and data editor carry on working. The analyst can also be used by voice (Analyze with AI, then Voice); each voice session ends automatically after 5 minutes for the same reason. If the data gets into a strange state while you are testing, Settings → Reset to original data puts the provided dataset back.
 
 Throughout this document, (E) marks something I took from the provided 2025 data and (A) marks an assumption of mine.
 
@@ -111,7 +112,7 @@ To run the app locally:
 ```bash
 cd app
 npm install
-cp .env.local.example .env.local   # add OPENAI_API_KEY and OPENAI_MODEL
+cp .env.local.example .env.local   # add OPENAI_API_KEY and OPENAI_MODEL (voice uses OPENAI_REALTIME_MODEL, default gpt-realtime-2.1-mini)
 npm run seed                       # loads dataset/Attendee_Dataset.xlsx into a local SQLite database
 npm run dev                        # opens on http://localhost:3000
 npm test                           # metric, tool, grounding, analyst and dataset tests
@@ -128,7 +129,7 @@ The hosted version runs on Vercel with a Supabase Postgres database, which you s
 | [Next.js](https://nextjs.org), [Tailwind](https://tailwindcss.com), [shadcn/ui](https://ui.shadcn.com), [recharts](https://recharts.org), [TanStack Table](https://tanstack.com/table) | Building the app | Open source |
 | [Supabase](https://supabase.com) | The live Postgres database | Free plan |
 | [Vercel](https://vercel.com) | Hosting | Hobby (free) |
-| [OpenAI API](https://platform.openai.com/docs), gpt-5.6-luna | The AI analyst and dataset mapping | Pay as you go, with a $50 usage limit for security |
+| [OpenAI API](https://platform.openai.com/docs), gpt-5.6-luna and gpt-realtime-2.1-mini | The AI analyst (chat and voice) and dataset mapping | Pay as you go, with a $50 usage limit for security |
 | Python with pandas, scikit-learn and statsmodels | Cleaning the data, the reference metrics and the show-up model | Open source |
 | [Claude Code](https://claude.com/claude-code) | A coding and research assistant | Paid |
 
@@ -142,7 +143,7 @@ The 2025 data is synthetic and covers a single season, so carrying its rates ove
 
 The least certain inputs are the yields from ambassadors and partners, and they are also the ones that move the number most. The plan tests them in the first three weeks, before most of the money is spent.
 
-The AI analyst depends on the $50 API usage limit. Once that is used up it stops answering, though everything else in the app keeps working.
+The AI analyst depends on the $50 API usage limit. Once that is used up it stops answering, though everything else in the app keeps working. Voice sessions are capped at 5 minutes each, and because speech is played as it is generated, the number check can only flag an unverified figure in the transcript rather than stop it being spoken.
 
 Because the pace curve was fitted on the 2025 outcome, projections for 2025 dates reproduce the known result by construction. The app labels the curve as a 2025 benchmark and also shows a simple pace check that uses only data up to the chosen date.
 

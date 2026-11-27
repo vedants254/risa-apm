@@ -24,7 +24,9 @@ npm run dev                        # http://localhost:3000
 | `npm run test:grounding` | Unit tests for the copilot's numeric grounding check (rounding, ₹ lakh forms, %, ratios, dates ignored, invented numbers caught). |
 | `npm run test:copilot` | Runs the 3-step demo workflow through the real copilot loop. A scripted stand-in replaces the LLM. Also covers persistence, the confirm cards, the grounding correction round and dataset isolation of chat history. |
 | `npm run test:dataset` | The upload pipeline with no live model call: fast path on the original workbook, a messy CSV export (renamed columns, DD/MM dates, ₹ amounts, "Yes"/"Attendee" values, duplicates) that must reproduce the original metrics, the model retry path, the sponsor workbook refusal, no leakage after importing B over A, and schema migrations. |
-| `npm test` | Runs all five test suites. |
+| `npm run test:voice` | Voice mode, offline: tool conversion to the Realtime format, the tool-round cap, parallel tool runs with timeouts and error outputs, retries, the per-IP limiter, the session config, and the voice draft → confirm path. |
+| `npm run test:voice:live` | Voice mode, live (needs `npm run dev -- -p 3311` and `OPENAI_API_KEY`; `VOICE_TEST_BASE` overrides the URL). Mints a session through `/api/voice/session`, talks to the Realtime model over a WebSocket with text input, runs its function calls through `/api/tools`, and checks the answer. At most 2 sessions per run. Not part of `npm test`. |
+| `npm test` | Runs the six offline test suites. |
 | `npm run typecheck` | Runs `tsc --noEmit`. |
 
 The tests use a temporary copy of the database, so they never change your local data.
@@ -36,6 +38,10 @@ The tests use a temporary copy of the database, so they never change your local 
 | `OPENAI_API_KEY` | — | Required for the copilot chat. Without it, the panel shows "Set OPENAI_API_KEY". |
 | `OPENAI_MODEL` | `gpt-4.1-mini` | Any chat-completions model that supports tool calling. |
 | `LLM_PROVIDER` | `openai` | Set to `gemini` to use `GEMINI_API_KEY` / `GEMINI_MODEL` (default `gemini-2.5-flash`) through Google AI Studio's OpenAI-compatible endpoint. |
+| `OPENAI_REALTIME_MODEL` | `gpt-realtime-2.1-mini` | Speech-to-speech model for voice mode. Uses `OPENAI_API_KEY`. |
+| `OPENAI_REALTIME_VOICE` | `marin` | Voice for spoken answers (`marin`, `cedar`, `alloy`, `ash`, `ballad`, `coral`, `echo`, `sage`, `shimmer`, `verse`). |
+| `OPENAI_REALTIME_TRANSCRIBE_MODEL` | `gpt-4o-mini-transcribe` | Transcribes the user's speech for the on-screen transcript. |
+| `OPENAI_REALTIME_REASONING_EFFORT` | model default (`low`) | Optional: `minimal`, `low`, `medium`, `high`. Higher is more careful but slower to answer. |
 | `DB_DRIVER` | `sqlite` | `sqlite` uses `data/growth.db` (or `SQLITE_PATH`). `postgres` uses `DATABASE_URL` (Supabase transaction pooler works: no prepared statements, TLS on, pool of `PG_POOL_MAX`=3). |
 | `DATASET_PATH`, `PACE_CURVE_PATH` | `seed-data/` | Optional overrides. The app ships its own copies so a deployment can reset and project without the sibling folders. |
 
@@ -149,6 +155,26 @@ These follow [`../SPEC.md`](../SPEC.md) exactly ("Canonical metric definitions")
 - **Persistence.** Every user message, assistant message, tool call and tool result is stored in `chat_messages` and replayed as history (the last 12 user turns). The panel shows an "evidence trail" of the tool calls behind each answer.
 - **No key.** The panel shows "Set OPENAI_API_KEY", and the tool layer stays testable at `GET /api/tools` (lists the tools) or `GET /api/tools?name=diagnose&date=2025-04-13` / `POST /api/tools {name, args, date}`.
 - **Provider swap.** `lib/llm.ts` exposes one `chat(messages, tools)` interface. Gemini runs through Google's OpenAI-compatible endpoint (`LLM_PROVIDER=gemini`).
+
+## Voice mode
+
+The analyst panel opens on a choice: the greeting, the starter questions, and two buttons, **Chat** and **Voice** (the message box appears once Chat is chosen; a starter question goes straight into chat). Voice opens a live speech session with the same analyst; **Back to chat** returns to the chat, which is untouched.
+
+- **One model.** `gpt-realtime-2.1-mini` (`OPENAI_REALTIME_MODEL`) does speech recognition, reasoning and speech in one OpenAI Realtime session over WebRTC. It has the same instructions as the chat analyst (same data context, snapshot date, grounding and confirmation rules) plus speech rules: short sentences, rounded numbers, "one moment" before slow lookups, no IDs or tables read aloud. Server VAD handles turn taking, and the user's words are transcribed for the on-screen transcript.
+- **How a session runs.** As soon as it connects, the analyst introduces itself ("Hi, I'm the AI analyst for <event>…", event name from the dataset), then listens. The user can speak or tap a starter question (sent as text into the same session and answered aloud). Semantic VAD decides when the user has finished; the user can cut in at any time.
+- **Interruptions.** Speaking over the analyst cancels its answer and the server cuts the unplayed audio; tapping a question does the same from the client (`response.cancel`, then `output_audio_buffer.clear`). The cut-off answer stays in the transcript marked "Interrupted", and nothing is removed from the conversation: the model is told to weigh the unfinished request against the new one (replace, add, or ask). Only one response runs at a time, and a lookup that finishes after the user moved on still has its result appended (so the data can be reused) but does not trigger an answer of its own (`VoiceTurns` in `lib/voice.ts`).
+- **Context.** The Realtime session keeps the whole conversation for its 5 minutes. Each new session is also given the last few turns of the text chat for the active dataset (up to 8 messages, about 2k tokens) so switching from chat to voice needs no repeating.
+- **Tools run in this app.** The model gets the same tools as chat as Realtime function tools (no MCP, no hosted tools). When a response ends in function calls, the browser runs each through `POST /api/tools` (the same `safeRunTool` at the selected snapshot date), sends every result back as a `function_call_output`, then asks for one spoken answer. A lookup that takes over 20 seconds, fails or has bad arguments returns an error to the model, which says it could not get the data. One question can use at most 6 rounds of lookups; after that the model is told to stop and summarise, and the panel says so.
+- **Drafts still need a click.** `propose_task` and `propose_campaign_update` show the same confirm card as chat. The draft is rebuilt on the server from the tool (`POST /api/voice/proposal`, stored apart from the chat history) and confirmed through the existing `POST /api/chat/confirm`. Nothing is created or changed by voice alone.
+- **Grounding is flagged, not blocked.** Each finished spoken answer runs through the same numeric check as chat, against this session's tool results. Speech cannot be unsaid, so unbacked figures only get the muted "Some figures could not be checked against the data: …" line under the transcript.
+- **Keys.** `POST /api/voice/session` mints a short-lived client secret (valid 60 seconds for starting a session) with the server key; the browser only ever sees that secret. Missing key: 503 with a setup message. OpenAI errors come back as a readable message with any key scrubbed.
+- **Limits.**
+  - Each voice session lasts at most **5 minutes**, with a visible countdown; it then ends on its own.
+  - 5 sessions per IP per 10 minutes. The counter is in memory, so on Vercel it is per warm function instance and resets on a cold start; use a shared store for a hard limit.
+  - Usage or quota errors from OpenAI show "The voice analyst has reached its usage limit".
+- **Failure handling.** The session request and the WebRTC handshake retry twice with backoff on network or 5xx errors (never on 4xx). If the connection drops mid-session, the panel reconnects up to 2 times on its own (sending the recent transcript as context), then shows "Connection lost" with **Reconnect session**. Ending the session, leaving voice mode, closing the panel, changing page or snapshot date, or closing the tab stops the microphone, closes the connection and cancels pending lookups and timers.
+- **Listening-friendly results.** The voice model gets the same tool results as chat, except `diagnose`, which is passed weakest campaign first with the per-stage tables dropped (same values, each campaign keeps its bottleneck; `voiceView` in `lib/voice.ts`). Without this the mini model often named the first "under-performing" row instead of the weakest one.
+- **Caveats.** Answer quality is the mini model's: it can still slip into jargon ("CAC") or over-precise figures; the transcript and grounding line make that visible, and `OPENAI_REALTIME_MODEL=gpt-realtime-2.1` is the stronger option. Voice turns are not saved to the chat history (drafts are saved so they can be confirmed). The transcript of the user's speech comes from a separate transcription model, so it can differ slightly from what the voice model heard. A new session after a drop has no memory beyond the recent transcript it is given.
 
 ## Demo workflow
 

@@ -13,7 +13,9 @@
     "test:copilot": "tsx scripts/test-copilot.ts",
     "test:grounding": "tsx scripts/test-grounding.ts",
     "test:dataset": "tsx scripts/test-dataset.ts",
-    "test": "npm run test:golden && npm run test:tools && npm run test:grounding && npm run test:copilot && npm run test:dataset"
+    "test": "npm run test:golden && npm run test:tools && npm run test:grounding && npm run test:copilot && npm run test:dataset && npm run test:voice",
+    "test:voice": "tsx scripts/test-voice.ts",
+    "test:voice:live": "tsx scripts/test-voice.ts --live"
   },
   "dependencies": {
     "@number-flow/react": "^0.6.2",
